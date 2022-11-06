@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid px-3 px-md-0">
+          <div class="row">
+            <div class="col-md-12 mb-4">
+              <h1 class="h2">{{title}}</h1>
+              <form action="{{ url_for('cv_upload')}}" method="POST" enctype="multipart/form-data">
+                  <input type="file" name="file_to_save">
+
+                  <input type="submit" value="Jukteu">
+              </form>
+            </div>
+          </div>
+        </div>
+{% endblock %}
