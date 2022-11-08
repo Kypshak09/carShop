@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row no-gutters slider-text justify-content-start align-items-center justify-content-center">
+          <div class="col-lg-8 ftco-animate">
+            <form method="post">
+        <label for="title">Car Unique Code</label>
+        <br>
+        <input type="text" name="car_id"
+               value="{{ request.form['car_id'] or car['car_id'] }}"></input>
+        <br>
+
+        <label for="content">Car Model</label>
+        <br>
+         <input type="text" name="car_name"
+               value="{{ request.form['car_name'] or car['car_name'] }}"></input>
+        <br>
+                   <br>
+                <br>
+                <input type="text" name="description" placeholder="Description"
+               value="{{ request.form['description'] or car['description']}}"></input>
+                <br>
+                <br>
+
+                <input type="text" name="price" placeholder="Price per min"
+               value="{{ request.form['price'] or car['price'] }}"></input>
+                <br>
+                <br>
+        <button type="submit">Submit</button>
+
+         <hr>
+        <a href="{{ url_for('delete', id=car['id']) }}">DELETE CAR FROM STORE</a>
+    </form>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+

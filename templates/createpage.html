@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+
+       <div class="container">
+        <div class="row no-gutters slider-text justify-content-start align-items-center justify-content-center">
+          <div class="col-lg-8 ftco-animate">
+
+            <form method="post" enctype="multipart/form-data">
+        <label for="title">Car Code</label>
+        <br>
+        <input type="text" name="car_id"
+               placeholder="Code"
+               value="{{ request.form['car_id'] }}"></input>
+        <br>
+
+        <label for="content">Car Description</label>
+        <br>
+        <input name="car_name"
+                  placeholder="Car Model"
+                  >{{ request.form['car_name'] }}</input>
+        <br>
+                <br>
+                <h3>Car Photo</h3>
+         <input type="file" name="img"
+               value="{{ request.form['img'] }}"></input>
+        <br>
+                <br>
+                <input type="text" name="description" placeholder="Description"
+               value="{{ request.form['description'] }}"></input>
+                <br>
+                <br>
+
+                <input type="text" name="price" placeholder="Price per min"
+               value="{{ request.form['price'] }}"></input>
+                <br>
+                <br>
+        <button type="submit">Submit</button>
+    </form>
+        </div>
+    </div>
+
+
+{% endblock %}
